@@ -1,0 +1,15 @@
+@use './colors';
+
+@mixin burgerBtn {
+    position: absolute;
+    right: 0;
+    height: 3px;
+    background-color: colors.$dark;
+}
+
+@mixin heroImg($bgImg) {
+    background-image: url($bgImg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}

@@ -14,3 +14,79 @@ html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.6rem;
+}
+
+// NAV
+.nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 10vh;
+	background-color: colors.$dark-green-color;
+	font-size: 2.8rem;
+	z-index: 1000;
+
+    
+
+	&__burger-btn {
+		// display: none;
+		position: fixed;
+		top: 20px;
+		right: 40px;
+		padding: 1em 2em;
+		background: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+
+        i {
+            font-size: 3rem;
+        }
+
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+	}
+
+	&__items {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__item {
+		position: relative;
+		margin: 0.5em;
+		padding: 0.3em 0.4em;
+		font-size: 2.8rem;
+		color: colors.$pure-white;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: colors.$pure-white;
+			transform: scaleX(0);
+			transition: transform 0.3s;
+		}
+
+		&:hover::before {
+			transform: scaleX(1);
+		}
+
+		&:last-child {
+			margin-right: 3em;
+		}
+	}
+}
