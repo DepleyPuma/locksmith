@@ -24,6 +24,10 @@
 
     <nav class="nav">
 
+        <div class="nav__logo">
+            <a href="#home">logo</a>
+        </div>
+
         <div class="nav__items">
             <a href="#home" class="nav__item">Home</a>
             <a href="#about-us" class="nav__item">O nas</a>
@@ -33,7 +37,7 @@
         </div>
     </nav>
 
-    <header class="header">
+    <header id="home" class="header">
         <h1 class="header__title">Ślusarz 24h</h1>
         <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <a href="tel:000000000" class="header__btn btn-special-animation">Zadzwoń</a>
@@ -85,32 +89,67 @@
                     <div class="services__card" onclick="void(0)">
                         <h3 class="services__card-title">Wymiana zamka</h3>
                         <hr>
-                        <p><span>Gdzie:</span></p>
-                        <p><span>Długość:</span>10h</p>
+                        <p><span>Option 1:</span></p>
+                        <p><span>Option 2:</span></p>
+                        <p><span>Time:</span>10h</p>
                         <p class="price-tag">100zł</p>
                     </div>
 
                     <div class="services__card" onclick="void(0)">
                         <h3 class="services__card-title">Naprawa Zamka</h3>
                         <hr>
-                        <p><span>Gdzie:</span></p>
-                        <p><span>Długość:</span>10h</p>
+                        <p><span>Option 1:</span></p>
+                        <p><span>Option 2:</span></p>
+                        <p><span>Time:</span>10h</p>
                         <p class="price-tag">100zł</p>
                     </div>
-                    
+
                     <div class="services__card" onclick="void(0)">
-                        <h3 class="services__card-title">Otwieranie samochodów</h3>
+                        <h3 class="services__card-title">Zamki samochodowe</h3>
                         <hr>
-                        <p><span>Gdzie:</span></p>
-                        <p><span>Długość:</span>10h</p>
+                        <p><span>Option 1:</span></p>
+                        <p><span>Option 2:</span></p>
+                        <p><span>Time:</span>10h</p>
                         <p class="price-tag">100zł</p>
                     </div>
 
                 </div>
-                
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact section-padding">
+            <div class="wrapper">
+                <h2 class="section-heading">kontakt</h2>
+
+                <form action="mail.php" method="post" class="contact__form">
+
+                    <div class="contact__form-top">
+
+                        <label for="name" class="contact__form-label">Imię i nazwisko:</label>
+                        <input type="text" class="contact__form-input" id="name" name="name">
+
+                        <label for="email" class="contact__form-label">Adres e-mail:</label>
+                        <input type="email" class="contact__form-input" id="email" name="email">
+
+                    </div>
+                    <label for="msg" class="contact__form-label">Wiadomość</label>
+                    <textarea id="msg" name="msg" class="contact__form-textarea"></textarea>
+
+
+                    <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+                </form>
+
+                <p class="msg-status error">testowy komunikat</p>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <p class="footer__bottom-text">&copy; <span class="footer__year"></span> Super Ślusarz </p>
+        </div>
+    </footer>
 
 
     <script src="./js/script.js"></script>

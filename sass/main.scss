@@ -98,7 +98,7 @@ body {
 	padding: 2em;
 	height: 100vh;
 	text-align: center;
-	color: colors.$dark;
+	color: colors.$pure-white;
 	@include mixins.heroImg("../img/header-img_640.jpeg");
 	background-attachment: scroll;
 
@@ -198,11 +198,21 @@ body {
 
 	.nav {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
 		align-items: center;
 		height: 10vh;
 		transform: translate(0);
 		background-color: transparent;
+
+		&__logo {
+			margin-left: 3em;
+			text-transform: uppercase;
+			
+			a {
+				text-decoration: none;
+				color: colors.$pure-white;
+			}
+		}
 
 		&__item {
 			display: inline-block;
