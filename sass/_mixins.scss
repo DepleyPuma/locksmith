@@ -8,7 +8,7 @@
 }
 
 @mixin heroImg($bgImg) {
-    background-image: url($bgImg);
+    background-image: colors.$img-shadow2, url($bgImg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

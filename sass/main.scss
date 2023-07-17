@@ -52,7 +52,7 @@ body {
 	width: 100%;
 	transform: translateX(100%);
 	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-	background-color: colors.$dark-green-color;
+	background-color: colors.$dark;
 	font-size: 2.8rem;
 	z-index: 100;
 
@@ -81,10 +81,6 @@ body {
 		&:hover::before {
 			transform: scaleX(1);
 		}
-
-		// &:last-child {
-		// 	margin-right: 3em;
-		// }
 	}
 }
 
@@ -92,8 +88,145 @@ body {
 	transform: translateX(0);
 }
 
-// @media(min-width: 992px) {
-// 	.nav {
+// HEADER
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 100vh;
+	text-align: center;
+	color: colors.$dark;
+	@include mixins.heroImg("../img/header-img_640.jpeg");
+	background-attachment: scroll;
 
-// 	}
-// }
+	&__title {
+		font-size: 4.8rem;
+		font-weight: 300;
+	}
+
+	&__text {
+		margin-top: 0.5em;
+		font-size: 2.4rem;
+	}
+
+	&__btn {
+		margin-top: 3em;
+		padding: 0.8em 1.6em;
+		background-color: colors.$dark;
+		border-radius: 8px;
+		color: colors.$pure-white;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: colors.$gray;
+		}
+	}
+}
+
+// ABOUT US
+.about-us {
+	&__box {
+		padding: 0.5em 1em;
+	}
+
+	&__header {
+		font-size: 2.8rem;
+	}
+
+	&__text {
+		padding: 0.8em 1.6em;
+		line-height: 30px;
+	}
+}
+
+// SERVICES
+.services {
+	background-color: colors.$dark;
+
+	h2 {
+		color: colors.$pure-white;
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+
+	&__card {
+		margin: 2em 1em;
+		padding: 3em;
+		height: 400px;
+		width: 300px;
+		background-color: colors.$pure-white;
+		transition: transform 0.3s;
+
+		&-title {
+			text-align: center;
+			text-transform: uppercase;
+			margin-bottom: 0.5em;
+		}
+
+		p {
+			padding: 0.5em 1em;
+			margin: 0.8em;
+		}
+
+		span {
+			padding: 0 0.5em;
+			font-weight: bold;
+		}
+
+		.price-tag {
+			margin-top: 3em;
+			font-size: 2.4rem;
+			text-align: center;
+			font-weight: bold;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		display: none;
+	}
+
+	.nav {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: 10vh;
+		transform: translate(0);
+		background-color: transparent;
+
+		&__item {
+			display: inline-block;
+			color: colors.$pure-white;
+
+			&:last-child {
+				margin-right: 3em;
+			}
+		}
+	}
+
+	.shadow-bg {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.header {
+		background-image: colors.$img-shadow2, url("../img/header-img_1920.jpeg");
+	}
+}
+
+@media (min-width: 1100px) {
+	.services {
+		&__card {
+			width: 30%;
+		}
+	}
+}
