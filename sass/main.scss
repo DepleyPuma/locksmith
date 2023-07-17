@@ -23,8 +23,8 @@ body {
 // NAV
 .burger-btn {
 	position: fixed;
-	top: 20px;
-	right: 40px;
+	top: 10px;
+	right: 10px;
 	padding: 1em 2em;
 	background: none;
 	border: 1px solid transparent;
@@ -55,6 +55,10 @@ body {
 	background-color: colors.$dark;
 	font-size: 2.8rem;
 	z-index: 100;
+
+	&__logo {
+		display: none;
+	}
 
 	&__item {
 		position: relative;
@@ -130,17 +134,22 @@ body {
 
 // ABOUT US
 .about-us {
+	&.section-padding {
+		padding: 6em 1em;
+	}
+
 	&__box {
 		padding: 0.5em 1em;
 	}
 
 	&__header {
 		font-size: 2.8rem;
+		margin-bottom: 0.5em;
 	}
 
 	&__text {
-		padding: 0.8em 1.6em;
-		line-height: 30px;
+		padding: 0.2em 0.4em;
+		line-height: 20px;
 	}
 }
 
@@ -160,33 +169,167 @@ body {
 
 	&__card {
 		margin: 2em 1em;
-		padding: 3em;
+		padding: 2em;
 		height: 400px;
 		width: 300px;
+		border-radius: 8px;
 		background-color: colors.$pure-white;
 		transition: transform 0.3s;
 
 		&-title {
+			// margin-bottom: 0.5em;
 			text-align: center;
 			text-transform: uppercase;
-			margin-bottom: 0.5em;
+			font-size: 2rem;
+		}
+
+		hr {
+			margin-top: 1em;
+			margin-bottom: 1em;
 		}
 
 		p {
 			padding: 0.5em 1em;
 			margin: 0.8em;
+			text-align: center;
 		}
 
 		span {
 			padding: 0 0.5em;
+			font-size: 1.6rem;
 			font-weight: bold;
 		}
 
 		.price-tag {
 			margin-top: 3em;
+			// margin-bottom: 1em;
 			font-size: 2.4rem;
 			text-align: center;
 			font-weight: bold;
+		}
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+
+// CONTACT
+.contact {
+	position: relative;
+	background-color: colors.$pure-white;
+	overflow: hidden;
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form {
+		padding: 2em;
+		border-radius: 8px;
+		background-color: colors.$gray;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		color: #000;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include mixins.contactForm;
+	}
+
+	&__form-textarea {
+		@include mixins.contactForm;
+
+		min-height: 150px;
+		resize: vertical;
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: colors.$pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: colors.$dark;
+		cursor: pointer;
+
+		&::before {
+			background-color: colors.$light-green-color;
+		}
+	}
+
+	.msg-status {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		top: 50px;
+		left: 50%;
+		padding: 38px;
+		width: 600px;
+		border-radius: 12px;
+		font-size: 2.4rem;
+		transform: translate(-50%, -50%);
+		z-index: 1000;
+	}
+
+	.success {
+		display: flex;
+		background-color: hsl(143, 83%, 55%);
+	}
+
+	.error {
+		display: flex;
+		background-color: hsl(9, 100%, 64%);
+	}
+}
+
+// FOOTER
+.footer {
+	background-color: colors.$dark;
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
+@media (min-width: 576px) {
+	.burger-btn {
+		top: 20px;
+		right: 20px;
+	}
+
+	.about-us {
+		&__box {
+			padding: 0;
+		}
+
+		&__text {
+			padding: 0.8em 1.6em;
+			line-height: 30px;
+		}
+	}
+
+	.services {
+		&__card {
+			span {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	.contact {
+
+		.msg-status {
+			top: 160px;
 		}
 	}
 }
@@ -198,16 +341,20 @@ body {
 
 	.nav {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
 		height: 10vh;
 		transform: translate(0);
 		background-color: transparent;
 
 		&__logo {
+			display: block;
+			position: absolute;
+			top: 30px;
+			left: 40px;
 			margin-left: 3em;
 			text-transform: uppercase;
-			
+
 			a {
 				text-decoration: none;
 				color: colors.$pure-white;
@@ -219,7 +366,7 @@ body {
 			color: colors.$pure-white;
 
 			&:last-child {
-				margin-right: 3em;
+				margin-right: 2em;
 			}
 		}
 	}
@@ -234,6 +381,14 @@ body {
 }
 
 @media (min-width: 1100px) {
+	.nav {
+		&__item {
+			&:last-child {
+				margin-right: 3em;
+			}
+		}
+	}
+
 	.services {
 		&__card {
 			width: 30%;

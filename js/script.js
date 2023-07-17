@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	const nav = document.querySelector(".nav");
 	const navBtn = document.querySelector(".burger-btn");
 	const allNavItems = document.querySelectorAll(".nav__item");
+	const footerYear = document.querySelector(".footer__year");
+	const msgStatus = document.querySelector('.msg-status');
 
 	const handleNav = () => {
 		nav.classList.toggle("show");
@@ -21,6 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	};
 
+	const handleCurrentYear = () => {
+		const year = new Date().getFullYear();
+		footerYear.innerText = year;
+	};
+
+	console.log(document.location.search);
+
+	handleCurrentYear();
 	window.addEventListener("scroll", addShadow);
 	navBtn.addEventListener("click", handleNav);
 });
