@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,33 +13,55 @@
 
 <body>
 
-    <button class="burger-btn">
-        <div class="burger-btn__box">
-            <div class="burger-btn__bars">
-                <i class="fa-solid fa-bars"></i>
+    <header class="header" id="home">
+
+        <button class="burger-btn">
+            <div class="burger-btn__box">
+                <div class="burger-btn__bars">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
-        </div>
-    </button>
+        </button>
 
-    <nav class="nav">
+        <nav class="nav nav-mobile">
 
-        <div class="nav__logo">
-            <a href="#home">logo</a>
+            <div class="nav__items">
+                <a href="#home" class="nav__item">Home</a>
+                <a href="#about-us" class="nav__item">O nas</a>
+                <a href="#services" class="nav__item">Usługi</a>
+                <a href="#contact" class="nav__item">Kontakt</a>
+            </div>
+
+        </nav>
+
+        <nav class="nav nav-desktop">
+
+            <div class="nav__logo">
+                <a href="#home">logo</a>
+            </div>
+
+            <div class="nav__items">
+                <a href="#home" class="nav__item">Home</a>
+                <a href="#about-us" class="nav__item">O nas</a>
+                <a href="#services" class="nav__item">Usługi</a>
+                <a href="#contact" class="nav__item">Kontakt</a>
+            </div>
+
+        </nav>
+
+        <div class="header__text">
+            <h1 class="header__title">Ślusarz 24h</h1>
+            <p class="header__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
 
-        <div class="nav__items">
-            <a href="#home" class="nav__item">Home</a>
-            <a href="#about-us" class="nav__item">O nas</a>
-            <a href="#services" class="nav__item">Usługi</a>
-            <a href="#contact" class="nav__item">Kontakt</a>
+        <div class="header__img">
+            <div class="header__shadow"></div>
         </div>
-        </div>
-    </nav>
 
-    <header id="home" class="header">
-        <h1 class="header__title">Ślusarz 24h</h1>
-        <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <a href="tel:000000000" class="header__btn btn-special-animation">Zadzwoń</a>
+
+
+
     </header>
 
     <main class="main">
@@ -122,25 +143,34 @@
             <div class="wrapper">
                 <h2 class="section-heading">kontakt</h2>
 
-                <form action="mail.php" method="post" class="contact__form">
+                <div class="contact__box">
 
-                    <div class="contact__form-top">
-
-                        <label for="name" class="contact__form-label">Imię i nazwisko:</label>
-                        <input type="text" class="contact__form-input" id="name" name="name">
-
-                        <label for="email" class="contact__form-label">Adres e-mail:</label>
-                        <input type="email" class="contact__form-input" id="email" name="email">
-
+                    <div class="contact__box-item">
+                        <a href="tel:000000000"><i class="fa-solid fa-mobile-screen-button"></i></a>
+                        <div class="contact__box-item-info">
+                            <h3>Telefon</h3>
+                            <p>+48 000 000 000</p>
+                        </div>
                     </div>
-                    <label for="msg" class="contact__form-label">Wiadomość</label>
-                    <textarea id="msg" name="msg" class="contact__form-textarea"></textarea>
 
+                    <div class="contact__box-item">
+                        <a href="mailto:testmail@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                        <div class="contact__box-item-info">
+                            <h3>E-mail</h3>
+                            <p>testmail@gmail.com</p>
+                        </div>
+                    </div>
 
-                    <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
-                </form>
+                    <div class="contact__box-item">
+                        <i class="fa-regular fa-map"></i>
+                        <div class="contact__box-item-info">
+                            <h3>Obszar pracy</h3>
+                            <p>Warszawa i okolice</p>
+                        </div>
+                    </div>
 
-                <p class="msg-status"></p>
+                </div>
+
             </div>
         </section>
     </main>

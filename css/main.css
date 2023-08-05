@@ -32,7 +32,7 @@
   position: relative;
   margin-bottom: 2em;
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   color: #333;
@@ -77,6 +77,10 @@ body {
   font-size: 1.6rem;
 }
 
+.sticky-body {
+  overflow: hidden;
+}
+
 .burger-btn {
   position: fixed;
   top: 10px;
@@ -89,6 +93,7 @@ body {
 }
 .burger-btn i {
   font-size: 3rem;
+  color: #000;
 }
 .burger-btn:focus {
   outline: none;
@@ -96,7 +101,7 @@ body {
   border-radius: 8px;
 }
 
-.nav {
+.nav-mobile {
   position: fixed;
   top: 0;
   display: flex;
@@ -110,7 +115,7 @@ body {
   font-size: 2.8rem;
   z-index: 100;
 }
-.nav__logo {
+.nav-desktop {
   display: none;
 }
 .nav__item {
@@ -244,76 +249,29 @@ body {
   transform: scale(1.05);
 }
 
-.contact {
-  position: relative;
-  background-color: #fff;
-  overflow: hidden;
-}
-.contact__form, .contact__form-top {
+.contact__box {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
-.contact__form {
-  padding: 2em;
-  border-radius: 8px;
-  background-color: gray;
+.contact__box-item a {
+  text-decoration: none;
 }
-.contact__form-label {
-  margin-bottom: 0.5em;
-  color: #000;
-  text-transform: uppercase;
-}
-.contact__form-input {
-  margin-bottom: 2em;
-  padding: 0.6em 1.2em;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.6rem;
-}
-.contact__form-textarea {
-  margin-bottom: 2em;
-  padding: 0.6em 1.2em;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.6rem;
-  min-height: 150px;
-  resize: vertical;
-}
-.contact__form-btn {
-  align-self: flex-end;
-  padding: 1em;
-  width: 100%;
-  max-width: 300px;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  background-color: #333;
-  cursor: pointer;
-}
-.contact__form-btn::before {
-  background-color: #e1ecc8;
-}
-.contact .msg-status {
-  display: none;
+.contact__box-item i {
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 50px;
-  left: 50%;
-  padding: 38px;
-  width: 600px;
-  border-radius: 12px;
-  font-size: 2.4rem;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
+  font-size: 10rem;
+  color: #000;
+  transition: color 0.3s;
 }
-.contact .success {
-  display: flex;
-  background-color: hsl(143, 83%, 55%);
+.contact__box-item i:hover {
+  color: #78925f;
 }
-.contact .error {
-  display: flex;
-  background-color: hsl(9, 100%, 64%);
+.contact__box-item-info {
+  margin-top: 1em;
+  font-size: 2rem;
 }
 
 .footer {
@@ -322,6 +280,7 @@ body {
 .footer__bottom-text {
   padding: 2em;
   text-align: center;
+  color: #fff;
 }
 
 @media (min-width: 576px) {
@@ -339,21 +298,28 @@ body {
   .services__card span {
     font-size: 1.8rem;
   }
-  .contact .msg-status {
-    top: 160px;
-  }
 }
 @media (min-width: 992px) {
   .burger-btn {
     display: none;
   }
-  .nav {
+  .nav-desktop {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 10vh;
-    transform: translate(0);
+    width: 100%;
+    transform: translateX(100%);
+    transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     background-color: transparent;
+    font-size: 2.8rem;
+    z-index: 100;
+    transform: translate(0);
+  }
+  .nav-mobile {
+    display: none;
   }
   .nav__logo {
     display: block;

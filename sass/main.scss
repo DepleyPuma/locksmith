@@ -20,6 +20,10 @@ body {
 	font-size: 1.6rem;
 }
 
+.sticky-body {
+	overflow: hidden;
+}
+
 // NAV
 .burger-btn {
 	position: fixed;
@@ -33,6 +37,7 @@ body {
 
 	i {
 		font-size: 3rem;
+		color: #000;
 	}
 
 	&:focus {
@@ -43,20 +48,22 @@ body {
 }
 
 .nav {
-	position: fixed;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 100%;
-	transform: translateX(100%);
-	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-	background-color: colors.$dark;
-	font-size: 2.8rem;
-	z-index: 100;
+	&-mobile {
+		position: fixed;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100%;
+		transform: translateX(100%);
+		transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+		background-color: colors.$dark;
+		font-size: 2.8rem;
+		z-index: 100;
+	}
 
-	&__logo {
+	&-desktop {
 		display: none;
 	}
 
@@ -216,78 +223,34 @@ body {
 
 // CONTACT
 .contact {
-	position: relative;
-	background-color: colors.$pure-white;
-	overflow: hidden;
-
-	&__form,
-	&__form-top {
+	&__box {
 		display: flex;
-		flex-direction: column;
-	}
-
-	&__form {
-		padding: 2em;
-		border-radius: 8px;
-		background-color: colors.$gray;
-	}
-
-	&__form-label {
-		margin-bottom: 0.5em;
-		color: #000;
-		text-transform: uppercase;
-	}
-
-	&__form-input {
-		@include mixins.contactForm;
-	}
-
-	&__form-textarea {
-		@include mixins.contactForm;
-
-		min-height: 150px;
-		resize: vertical;
-	}
-
-	&__form-btn {
-		align-self: flex-end;
-		padding: 1em;
-		width: 100%;
-		max-width: 300px;
-		color: colors.$pure-white;
-		border: none;
-		border-radius: 8px;
-		background-color: colors.$dark;
-		cursor: pointer;
-
-		&::before {
-			background-color: colors.$light-green-color;
-		}
-	}
-
-	.msg-status {
-		display: none;
-		justify-content: center;
+		justify-content: space-around;
 		align-items: center;
-		position: fixed;
-		top: 50px;
-		left: 50%;
-		padding: 38px;
-		width: 600px;
-		border-radius: 12px;
-		font-size: 2.4rem;
-		transform: translate(-50%, -50%);
-		z-index: 1000;
-	}
+		text-align: center;
 
-	.success {
-		display: flex;
-		background-color: hsl(143, 83%, 55%);
-	}
+		&-item {
+			a {
+				text-decoration: none;
+			}
+			i {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 10rem;
+				color: #000;
+				transition: color 0.3s;
 
-	.error {
-		display: flex;
-		background-color: hsl(9, 100%, 64%);
+				&:hover {
+					color: colors.$dark-green-color;
+				}
+			}
+
+			&-info {
+				margin-top: 1em;
+				font-size: 2rem;
+			}
+		}
 	}
 }
 
@@ -298,6 +261,7 @@ body {
 	&__bottom-text {
 		padding: 2em;
 		text-align: center;
+		color: colors.$pure-white;
 	}
 }
 
@@ -325,13 +289,6 @@ body {
 			}
 		}
 	}
-
-	.contact {
-
-		.msg-status {
-			top: 160px;
-		}
-	}
 }
 
 @media (min-width: 992px) {
@@ -340,12 +297,25 @@ body {
 	}
 
 	.nav {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		height: 10vh;
-		transform: translate(0);
-		background-color: transparent;
+		&-desktop {
+			position: fixed;
+			top: 0;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			height: 10vh;
+			width: 100%;
+			transform: translateX(100%);
+			transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+			background-color: transparent;
+			font-size: 2.8rem;
+			z-index: 100;
+			transform: translate(0);
+		}
+
+		&-mobile {
+			display: none;
+		}
 
 		&__logo {
 			display: block;

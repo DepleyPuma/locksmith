@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const nav = document.querySelector(".nav");
+	const navMobile = document.querySelector(".nav-mobile");
+	const navDesktop = document.querySelector(".nav-desktop");
 	const navBtn = document.querySelector(".burger-btn");
 	const allNavItems = document.querySelectorAll(".nav__item");
 	const footerYear = document.querySelector(".footer__year");
-	const msgStatus = document.querySelector('.msg-status');
 
 	const handleNav = () => {
-		nav.classList.toggle("show");
+		navMobile.classList.toggle("show");
+		document.body.classList.toggle("sticky-body");
 
 		allNavItems.forEach((item) => {
 			item.addEventListener("click", () => {
@@ -17,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const addShadow = () => {
 		if (window.scrollY >= 500) {
-			nav.classList.add("shadow-bg");
+			navDesktop.classList.add("shadow-bg");
 		} else {
-			nav.classList.remove("shadow-bg");
+			navDesktop.classList.remove("shadow-bg");
 		}
 	};
 
@@ -27,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const year = new Date().getFullYear();
 		footerYear.innerText = year;
 	};
-
-	console.log(document.location.search);
 
 	handleCurrentYear();
 	window.addEventListener("scroll", addShadow);
