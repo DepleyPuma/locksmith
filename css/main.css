@@ -358,7 +358,7 @@ body {
     justify-content: space-around;
   }
   .contact__box i {
-    font-size: 8rem;
+    font-size: 9rem;
   }
 }
 @media (min-width: 1100px) {
