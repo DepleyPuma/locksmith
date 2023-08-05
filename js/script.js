@@ -11,13 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		allNavItems.forEach((item) => {
 			item.addEventListener("click", () => {
-				nav.classList.remove("show");
+				navMobile.classList.remove("show");
+				document.body.classList.remove("sticky-body");
 			});
 		});
 	};
 
 	const addShadow = () => {
-		if (window.scrollY >= 500) {
+		if (window.scrollY >= 200) {
 			navDesktop.classList.add("shadow-bg");
 		} else {
 			navDesktop.classList.remove("shadow-bg");
